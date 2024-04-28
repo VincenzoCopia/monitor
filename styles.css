@@ -1,0 +1,54 @@
+body {
+    padding: 10px;
+}
+
+.goal {
+    font-size: 3vw;
+    color: green;
+}
+
+.righe {
+    padding: 5px;
+}
+
+hr {
+    margin: 5px;
+}
+
+.txt1 {
+    margin: 5px;
+}
+
+.right {
+    padding: 5px 5px;
+    /* border: 3px solid green; */
+    text-align: right;
+}
+
+.center {
+    padding: 50px 0;
+    /* border: 3px solid green; */
+    text-align: center;
+}
+
+.media {
+    font-size: 10vw;
+    color: red;
+}
+
+.chart{
+    height: 300px;
+    /* Aumenta per una visualizzazione più chiara su smartphone */
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .goal {
+        font-size: 5vw;
+    }
+
+    .chart {
+        height: 200px;
+        /* Adatta per dispositivi più piccoli */
+    }
+}
