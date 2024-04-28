@@ -41,7 +41,13 @@ hr {
     /* Aumenta per una visualizzazione più chiara su smartphone */
     margin-top: 50px;
 }
-
+.scegli {
+    font-size: 2vw;
+    font-weight: bold;
+    width: 300px;
+    text-align: center;
+    margin: auto;
+}
 @media (max-width: 768px) {
     .goal {
         font-size: 5vw;
