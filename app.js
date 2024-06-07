@@ -104,7 +104,7 @@ function drawChart() {
 Prod.child("Oggi").child("YYYY-MM").on('value', function (snapshot) {
     console.log("snapshot.val() " + snapshot.val());
     updateMonth(snapshot.val());
- );
+ });
 
 // Gestione della connessione
 var connectedRef = firebase.database().ref(".info/connected");
