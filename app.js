@@ -32,7 +32,8 @@ function loadMonthlyData() {
         myData = [['Giorno', 'Tons', { role: 'style' }, { role: 'annotation' }]];
         var TotMese = 0;
         var Conta = 0;
-
+        var Media = 0;
+        
         snapshot.forEach(function (cs) {
             var Etichetta = cs.val() != 0 ? cs.val() : '';
             myData.push([cs.key, Etichetta, 'blue', "" + Etichetta]);
@@ -41,8 +42,10 @@ function loadMonthlyData() {
                 Conta += 1;
             }
         });
-
-        document.getElementById('Media').innerHTML = Math.floor(TotMese / Conta);
+        if (Conta > 0) {
+            Media = Math.floor(TotMese / Conta);
+        }
+        document.getElementById('Media').innerHTML = Media;
         google.charts.setOnLoadCallback(drawChart);
     });
 }
