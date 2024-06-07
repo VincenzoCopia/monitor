@@ -7,7 +7,7 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 var Prod = database.ref("Produzione");
 var Anno = "2024";
-var Mese = "04";
+var Mese = "04"; // Mese predefinito
 
 // Prod.child("Oggi").on('value', function (sn) {
 //     document.getElementById('Data').innerHTML = "" + sn.child("Data").val() + "";
@@ -15,7 +15,7 @@ var Mese = "04";
 
 var myData = [['Giorno', 'Tons', { role: 'style' }, { role: 'annotation' }]];
 
-var Mese = "04";  // Mese predefinito
+//var Mese = "04";  // Mese predefinito
 
 google.charts.load('current', { 'packages': ['corechart'] });
 
@@ -97,6 +97,11 @@ function drawChart() {
 //     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
 //     chart.draw(data, options);
 // }
+
+Prod.child("Oggi").child("YYYY-MM").on('value', function (snapshot) {
+    console.log("snapshot.val() " + snapshot.val());
+    updateMonth(snapshot.val());
+ );
 
 // Gestione della connessione
 var connectedRef = firebase.database().ref(".info/connected");
