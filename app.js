@@ -24,7 +24,7 @@ function updateMonth(selectedMonth) {
     Mese = selectedMonth.split("-")[1];
     Anno = selectedMonth.split("-")[0];
     console.log(`Anno ${Anno} Mese ${Mese}`);
-    loadMonthlyData();  // Ricarica i dati per il nuovo mese
+    loadMonthlyData();  // Ricarica i dati per il mese selezionato
 }
 
 function loadMonthlyData() {
@@ -35,7 +35,7 @@ function loadMonthlyData() {
         var Media = 0;
         
         snapshot.forEach(function (cs) {
-            var Etichetta = cs.val() != 0 ? cs.val() : '';
+            var Etichetta = cs.val() != 0 ? cs.val() : 0;
             myData.push([cs.key, Etichetta, 'blue', "" + Etichetta]);
             if (cs.val() > 0) {
                 TotMese += cs.val();
@@ -101,6 +101,7 @@ function drawChart() {
 //     chart.draw(data, options);
 // }
 
+// Legge e imposta il mese corrente
 Prod.child("Oggi").child("YYYY-MM").on('value', function (snapshot) {
     console.log("snapshot.val() " + snapshot.val());
     updateMonth(snapshot.val());
