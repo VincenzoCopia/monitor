@@ -35,7 +35,7 @@ function loadMonthlyData() {
         var Media = 0;
         
         snapshot.forEach(function (cs) {
-            var Etichetta = cs.val() != 0 ? cs.val() : .1;
+            var Etichetta = cs.val() != 0 ? cs.val() : null;
             myData.push([cs.key, Etichetta, 'blue', "" + Etichetta]);
             if (cs.val() > 0) {
                 TotMese += cs.val();
